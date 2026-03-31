@@ -1,0 +1,26 @@
+{
+  "agents": {
+    "defaults": {
+      "workspace": "/home/autochecker/se-toolkit-lab-8/nanobot/workspace",
+      "model": "coder-model",
+      "provider": "custom"
+    }
+  },
+  "providers": {
+    "custom": {
+      "apiKey": "msqk",
+      "apiBase": "http://localhost:42005/v1"
+    }
+  },
+  "tools": {
+    "mcpServers": {
+      "lms": {
+        "command": "uv",
+        "args": ["run", "-m", "mcp_lms", "http://localhost:42002"],
+        "env": {
+          "LMS_API_KEY": "msak"
+        }
+      }
+    }
+  }
+}

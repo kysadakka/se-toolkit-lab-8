@@ -33,7 +33,6 @@ This loop architecture (sometimes called "the billion-dollar while loop") is wha
 In essence, the agentic loop transforms an LLM from a passive text generator into an active, goal-oriented system that can perceive, reason, act, and learn continuously. 
 ## Task 1B — Agent with LMS tools
 
-<!-- Paste the agent's response to "What labs are available?" and "Describe the architecture of the LMS system" -->
 🐈 nanobot
 Here are the available labs in the LMS:                                                                                                                                          
 
@@ -61,7 +60,7 @@ Overview
 
 The LMS is a full-stack web application that provides a learning analytics dashboard. It's built with modern technologies and deployed using Docker Compose.                     
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Core Components                                                                                                                                                                  
 
@@ -162,61 +161,27 @@ This architecture supports scalability, observability, and extensibility for lea
  
 ## Task 1C — Skill prompt
 
-<!-- Paste the agent's response to "Show me the scores" (without specifying a lab) -->
-
-
 🐈 nanobot
-The LMS system requires a specific lab to retrieve score-related data (pass rates, completion rates, group performance, top learners). However, I can show you the registered    
-learners in the system without lab filtering:                                                                                                                                    
+The LMS system requires specifying a lab to retrieve scores. There isn't a direct endpoint for overall scores across all labs.                                                   
 
-LMS Learners Overview                                                                                                                                                            
+I can show you:                                                                                                                                                                  
 
-Total Learners: 258                                                                                                                                                              
+ • Top learners for a specific lab (by average score)                                                                                                                            
+ • Pass rates for a specific lab (avg score and attempt count per task)                                                                                                          
+ • Group performance for a specific lab (avg score + student count per group)                                                                                                    
 
-Group Distribution:                                                                                                                                                              
+Would you like me to show scores for a particular lab? For example, I could show the top learners for lab-08 or any other lab from the list:                                     
 
-                    
- Group        Count 
- ────────────────── 
- B25-CSE-01   24    
- B25-CSE-02   24    
- B25-CSE-03   24    
- B25-CSE-04   24    
- B25-CSE-05   25    
- B25-DSAI-01  24    
- B25-DSAI-02  24    
- B25-DSAI-03  24    
- B25-DSAI-04  24    
- B25-DSAI-05  25    
- unknown      3     
-                    
+ 1 Lab 01 – Products, Architecture & Roles                                                                                                                                       
+ 2 Lab 02 — Run, Fix, and Deploy a Backend Service                                                                                                                               
+ 3 Lab 03 — Backend API: Explore, Debug, Implement, Deploy                                                                                                                       
+ 4 Lab 04 — Testing, Front-end, and AI Agents                                                                                                                                    
+ 5 Lab 05 – Data Pipeline and Analytics Dashboard                                                                                                                                
+ 6 Lab 06 — Build Your Own Agent                                                                                                                                                 
+ 7 Lab 07 — Build a Client with an AI Coding Agent                                                                                                                               
+ 8 lab-08                                                                                                                                                                        
 
-Sample Learners:                                                                                                                                                                 
-
-                               
- ID   External ID  Group       
- ───────────────────────────── 
- 1    4a861abe     unknown     
- 2    dc74d73d     B25-DSAI-05 
- 3    1c25f779     B25-CSE-03  
- 4    4ab50349     B25-DSAI-05 
- 5    f8ae7ade     B25-CSE-03  
- ...  ...          ...         
-                               
-
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-To see scores, you need to specify a lab. Available labs are:                                                                                                                    
-
- • lab-01 through lab-08                                                                                                                                                         
-
-Would you like me to show scores for a specific lab? For example:                                                                                                                
-
- • Pass rates per task                                                                                                                                                           
- • Completion rate                                                                                                                                                               
- • Top learners by average score                                                                                                                                                 
- • Group performance comparison 
-
+Just let me know which lab you'd like to see scores for! 
 ## Task 2A — Deployed agent
 
 <!-- Paste a short nanobot startup log excerpt showing the gateway started inside Docker -->
