@@ -1,15 +1,15 @@
 {
   "agents": {
     "defaults": {
-      "workspace": "/workspace/nanobot/workspace",
-      "model": "${LLM_API_MODEL}",
+      "workspace": "./workspace",
+      "model": "coder-model",
       "provider": "custom"
     }
   },
   "providers": {
     "custom": {
-      "apiKey": "${LLM_API_KEY}",
-      "apiBase": "${LLM_API_BASE_URL}"
+      "apiKey": "test-qwen-key",
+      "apiBase": "http://localhost:42005/v1"
     }
   },
   "channels": {
@@ -24,8 +24,8 @@
         "command": "uv",
         "args": ["run", "-m", "mcp_lms"],
         "env": {
-          "LMS_BACKEND_URL": "${NANOBOT_LMS_BACKEND_URL}",
-          "LMS_API_KEY": "${NANOBOT_LMS_API_KEY}"
+          "NANOBOT_LMS_BACKEND_URL": "http://localhost:42001",
+          "NANOBOT_LMS_API_KEY": "test-secret-key"
         }
       }
     }
