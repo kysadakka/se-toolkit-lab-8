@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(test *)",
+      "Read(//root/.nanobot/**)"
+    ]
+  },
+  "$version": 3
+}
