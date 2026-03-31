@@ -59,9 +59,9 @@ LMS System Architecture
 
 Overview                                                                                                                                                                         
 
-The LMS is a full-stack web application that provides a learning analytics dashboard. It's built with modern technologies and deployed using Docker Compose.                     
+The LMS is a full-stack web application that provides a learning analytics dashboard. It's built with modern technologies and deployed using Docker Compose.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Core Components                                                                                                                                                                  
 
@@ -162,60 +162,8 @@ This architecture supports scalability, observability, and extensibility for lea
  
 ## Task 1C — Skill prompt
 
-<!-- Paste the agent's response to "Show me the scores" (without specifying a lab) -->
-
-
 🐈 nanobot
-The LMS system requires a specific lab to retrieve score-related data (pass rates, completion rates, group performance, top learners). However, I can show you the registered    
-learners in the system without lab filtering:                                                                                                                                    
-
-LMS Learners Overview                                                                                                                                                            
-
-Total Learners: 258                                                                                                                                                              
-
-Group Distribution:                                                                                                                                                              
-
-                    
- Group        Count 
- ────────────────── 
- B25-CSE-01   24    
- B25-CSE-02   24    
- B25-CSE-03   24    
- B25-CSE-04   24    
- B25-CSE-05   25    
- B25-DSAI-01  24    
- B25-DSAI-02  24    
- B25-DSAI-03  24    
- B25-DSAI-04  24    
- B25-DSAI-05  25    
- unknown      3     
-                    
-
-Sample Learners:                                                                                                                                                                 
-
-                               
- ID   External ID  Group       
- ───────────────────────────── 
- 1    4a861abe     unknown     
- 2    dc74d73d     B25-DSAI-05 
- 3    1c25f779     B25-CSE-03  
- 4    4ab50349     B25-DSAI-05 
- 5    f8ae7ade     B25-CSE-03  
- ...  ...          ...         
-                               
-
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-To see scores, you need to specify a lab. Available labs are:                                                                                                                    
-
- • lab-01 through lab-08                                                                                                                                                         
-
-Would you like me to show scores for a specific lab? For example:                                                                                                                
-
- • Pass rates per task                                                                                                                                                           
- • Completion rate                                                                                                                                                               
- • Top learners by average score                                                                                                                                                 
- • Group performance comparison 
+The LMS system requires specifying a lab to retrieve scores. There isn't a direct endpoint for overall scores across all labs.                                                   
 
 ## Task 2A — Deployed agent
 

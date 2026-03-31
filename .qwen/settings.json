@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "Bash(test *)",
-      "Read(//root/.nanobot/**)"
+      "Read(//root/.nanobot/**)",
+      "Bash(uv *)",
+      "Bash(docker run *)",
+      "Bash(docker-compose *)"
     ]
   },
   "$version": 3
