@@ -32,7 +32,7 @@ The agentic loop is what distinguishes agents from simple chatbots:
  • Chatbots respond once to a prompt
  • Agents loop autonomously, adapting to feedback until they complete a task
 
-This loop enables capabilities like debugging code, researching topics across multiple sources, or managing complex workflows that require multiple steps and adjustments.
+This loop enables capabilities like debugging code, researching topics across multiple sources, or managing complex workflows that require multiple steps and adjustments
 
 **Checkpoint 2:** `cd nanobot && uv run nanobot agent -c ./config.json -m "What labs are available in our LMS?"`
 
