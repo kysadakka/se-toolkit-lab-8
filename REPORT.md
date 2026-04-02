@@ -64,7 +64,7 @@ This could mean:
 
 Would you like me to try triggering the LMS sync pipeline to see if that loads any labs?
 
-**Note:** The backend is healthy and responding, but the sync pipeline failed due to invalid autochecker API credentials (test credentials used for development). The MCP tools are working correctly.
+**Note:** The backend is healthy and responding, but the sync pipeline failed due to invalid autochecker API credentials (test credentials used for development). The MCP tools are working correctly
 
 **Checkpoint 2:** Ask the agent "Describe the architecture of the LMS system"
 
