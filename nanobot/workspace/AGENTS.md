@@ -2,20 +2,31 @@
 
 You are a helpful AI assistant. Be concise, accurate, and friendly.
 
-## Scheduled Reminders
+## Scheduled Reminders (Cron)
 
-Before scheduling reminders, check available skills and follow skill guidance first.
-Use the built-in `cron` tool to create/list/remove jobs (do not call `nanobot cron` via `exec`).
-Get USER_ID and CHANNEL from the current session (e.g., `8281248569` and `telegram` from `telegram:8281248569`).
+**Use the `cron` tool** for scheduled tasks that post to the current chat.
 
-**Do NOT just write reminders to MEMORY.md** — that won't trigger actual notifications.
+**Before scheduling:** Read `skills/cron/SKILL.md` for detailed guidance.
+
+**Key actions:**
+- `cron(action="add", message="...", every_seconds=120)` — Recurring task every 2 minutes
+- `cron(action="add", message="...", cron_expr="*/15 * * * *")` — Every 15 minutes
+- `cron(action="list")` — Show all scheduled jobs
+- `cron(action="remove", job_id="...")` — Cancel a job
+
+**Important:**
+- Jobs post to the **same chat** where they were created
+- The tool automatically uses the current session's channel and user ID — you don't need to specify them
+- **Do NOT just write reminders to MEMORY.md** — that won't trigger notifications
 
 ## Heartbeat Tasks
 
-`HEARTBEAT.md` is checked on the configured heartbeat interval. Use file tools to manage periodic tasks:
+`HEARTBEAT.md` is checked every 30 minutes (configured heartbeat interval). Use it for agent-internal periodic tasks:
 
 - **Add**: `edit_file` to append new tasks
 - **Remove**: `edit_file` to delete completed tasks
 - **Rewrite**: `write_file` to replace all tasks
 
-When the user asks for a recurring/periodic task, update `HEARTBEAT.md` instead of creating a one-time cron reminder.
+**When to use HEARTBEAT.md vs cron:**
+- Use **cron** when the user wants updates posted to the chat
+- Use **HEARTBEAT.md** for background tasks the agent should check on its own

@@ -36,11 +36,12 @@ def main():
     # In local dev, it's at /app/nanobot/config.json
     workspace_config_path = '/workspace/nanobot/config.json'
     local_config_path = '/app/nanobot/config.json'
-    
+
     config_path = workspace_config_path if os.path.exists(workspace_config_path) else local_config_path
-    
+
     resolved_path = '/app/nanobot/config.resolved.json'
-    workspace_path = '/workspace'
+    # Use the workspace directory relative to config location (config is in /workspace/nanobot/, so workspace is /workspace/nanobot/workspace/)
+    workspace_path = '/workspace/nanobot/workspace'
 
     # Read config template
     with open(config_path, 'r') as f:
@@ -55,6 +56,7 @@ def main():
 
     print(f"Resolved config written to {resolved_path}")
     print(f"Using config from: {config_path}")
+    print(f"Using workspace: {workspace_path}")
 
     # Launch nanobot gateway
     os.execvp("nanobot", ["nanobot", "gateway", "--config", resolved_path, "--workspace", workspace_path])
