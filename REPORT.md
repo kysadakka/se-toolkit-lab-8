@@ -722,6 +722,25 @@ async def get_items(session: AsyncSession = Depends(get_session)):
         ) from exc
 ```
 
+### Verification Test
+
+**Steps:**
+1. Rebuilt and redeployed backend: `docker compose build backend && docker compose up -d backend`
+2. Stopped PostgreSQL: `docker compose stop postgres`
+3. Called `/items/` endpoint with API key
+
+**Result (with PostgreSQL stopped):**
+```bash
+$ curl -H "Authorization: Bearer msak" http://localhost:42001/items/
+{"detail":"Database error: [Errno -2] Name or service not known"}
+HTTP_CODE: 500
+```
+
+**Before fix:** Would return HTTP 404 with `"Items not found"`
+**After fix:** Returns HTTP 500 with actual database error message
+
+This allows the agent and developers to correctly identify database failures instead of being misled by a 404 "not found" error.
+
 ### Post-fix Failure Check
 
 After the fix, when PostgreSQL is stopped, the agent now sees the **real** error:

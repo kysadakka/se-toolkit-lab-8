@@ -1,0 +1,2 @@
+{"_type": "metadata", "key": "webchat:98e76a69-c75c-4556-a8c8-4145204b113a", "created_at": "2026-04-02T10:50:28.509508", "updated_at": "2026-04-02T10:50:45.572904", "metadata": {}, "last_consolidated": 0}
+{"role": "user", "content": "List all scheduled jobs or cron tasks you have.", "timestamp": "2026-04-02T10:50:45.572895"}
