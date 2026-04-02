@@ -277,7 +277,11 @@ I'm nanobot 🐈, your AI development assistant. Here's what I can help you with
 - ✅ The webchat channel plugin is installed and the Flutter client connects through it
 
 - ✅ The Flutter web client is accessible at `/flutter` and protected by `NANOBOT_ACCESS_KEY=msnk`
-
+**All Task 2 checkpoints passing:**
+- Nanobot service is running in Docker with webchat channel enabled
+- WebSocket endpoint responds to messages with real agent responses
+- Flutter web client loads at `/flutter`
+- Agent successfully calls MCP tools (lms_labs, lms_health, lms_sync_pipeline)
 ## Task 3B — Traces
 
 <!-- Screenshots: healthy trace span hierarchy, error trace -->
