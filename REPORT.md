@@ -760,10 +760,26 @@ All services are operating normally.
 - ✅ After recovery, the health report says the system looks healthy
 - ✅ `REPORT.md` contains evidence from Task 4A, 4B, and 4C
 
-**All Task 4 checkpoints passing:**
-- Agent investigation uses `logs_error_count`, `logs_search`, and `traces_list` tools
-- Agent summarizes findings concisely with root cause analysis
-- Cron-based health checks work via Flutter chat
-- Bug fix changes HTTP 404 to HTTP 500 for database errors
-- Post-fix error messages show actual database connection errors
-- Health reports transition from UNHEALTHY to HEALTHY after PostgreSQL restart
+### Evidence Summary
+
+**Task 4A — Multi-step investigation:**
+- Agent uses `logs_error_count`, `logs_search`, and `traces_list` tools
+- Agent summarizes findings with root cause analysis
+- See logs and trace analysis in Task 4A section above
+
+**Task 4B — Proactive health check:**
+- Cron job created via Flutter chat: `cron(action="add", every_seconds=120, message="...")`
+- Job ID: `f0a4fec5`
+- Runs every 2 minutes, posts health summary to same chat
+- 3 successful executions recorded in runHistory
+- See cron execution logs and job storage in Task 4B section above
+
+**Task 4C — Bug fix and recovery:**
+- Planted bug: `backend/app/routers/items.py` returned HTTP 404 for database errors
+- Fix: Changed to HTTP 500 with actual error details
+- Post-fix: Database connection errors properly reported as 500 Internal Server Error
+- See bug fix diff and recovery evidence in Task 4C section above
+
+**Git Workflow:**
+- 4+ merged PRs with approvals (PRs #6-11 merged)
+- Task 4 committed with issue reference: `Closes #4`
