@@ -270,7 +270,13 @@ I'm nanobot 🐈, your AI development assistant. Here's what I can help you with
 
 ## Task 3A — Structured logging
 
-<!-- Paste happy-path and error-path log excerpts, VictoriaLogs query screenshot -->
+## Task 2 Acceptance Criteria Status
+
+- ✅ Nanobot runs as a Docker Compose service via `nanobot gateway`
+- ✅ After the webchat channel is installed, the WebSocket endpoint at `/ws/chat` responds when called with the correct `access_key`
+- ✅ The webchat channel plugin is installed and the Flutter client connects through it
+
+- ✅ The Flutter web client is accessible at `/flutter` and protected by `NANOBOT_ACCESS_KEY=msnk`
 
 ## Task 3B — Traces
 
